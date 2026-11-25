@@ -1,32 +1,55 @@
-# React + TypeScript + Vite
+# Harsh Parmar – Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Welcome to my personal portfolio website! This portfolio showcases my introduction, technical skills, projects, and contact information.
 
-Currently, two official plugins are available:
+## 🌐 Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**[Visit My Portfolio](https://my-portfolio-delta-one-51.vercel.app/)**
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Modern and premium UI design
+- Fully animated user interface
+- Responsive design for mobile, tablet, and desktop
+- Home page with personal introduction
+- About page with education and technical skills
+- Work page showcasing my projects
+- Contact page with contact information
+- Resume download functionality
 
-## Expanding the Oxlint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- React.js
+- TypeScript
+- Vite
+- CSS3
+- Framer Motion
+- React Router
+- Lucide React
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 📂 Project Structure
+
+- `src/components` – Reusable components
+- `src/pages` – Home, About, Work and Contact pages
+- `src/assets` – Images and assets
+- `public` – Static files
+
+## 💻 Run Locally
+
+```bash
+git clone https://github.com/CoderHarshParmar/my-portfolio.git
+cd my-portfolio
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 👨‍💻 Developer
+
+**Harsh Parmar**
+
+- GitHub: https://github.com/CoderHarshParmar
+- Portfolio: https://my-portfolio-delta-one-51.vercel.app/
+
+---
+
+⭐ Thank you for visiting my portfolio!
