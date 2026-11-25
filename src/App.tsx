@@ -11,28 +11,6 @@ import About from "./pages/About/About";
 import Work from "./pages/Work/Work";
 import Contact from "./pages/Contact/Contact";
 
-const PagePlaceholder = ({ title }: { title: string }) => (
-  <main
-    style={{
-      minHeight: "100vh",
-      display: "grid",
-      placeItems: "center", 
-      padding: "100px 20px 20px",
-      position: "relative",
-      zIndex: 1,
-    }}
-  >
-    <h1
-      style={{
-        fontFamily: "var(--font-heading)",
-        fontSize: "clamp(40px, 7vw, 75px)",
-      }}
-    >
-      <span className="gradient-text">{title}</span>
-    </h1>
-  </main>
-);
-
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -57,7 +35,7 @@ function App() {
 
             <Route path="/work" element={<Work />} />
 
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Contact />} /> 
           </Routes>
         </div>
       )}

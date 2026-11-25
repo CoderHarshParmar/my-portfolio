@@ -3,15 +3,11 @@ import { useReducedMotion } from "framer-motion";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  ArrowRight,
   ArrowUpRight,
-  CalendarDays,
   CheckCircle2,
   Code2,
-  Database,
   Layers3,
   Lightbulb,
-  LockKeyhole,
   Monitor,
   Ruler,
   Sparkles,
