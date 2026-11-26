@@ -17,7 +17,6 @@ const navItems = [
   { name: "Contact", path: "/contact" },
 ];
 
-const RESUME_URL = "/resume/Harsh-Resume.pdf";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
