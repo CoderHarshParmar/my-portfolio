@@ -67,14 +67,13 @@ const Navbar = () => {
         </nav>
 
         <div className="navbar-actions">
-         <a
-              href="./HARSH_PARMAR_RESUME.pdf"
-              download="Harsh-Parmar-Resume.pdf"
-              className="resume-button"
-            >
-              <Download size={17} />
-              <span>Resume</span>
-          </a>
+        <a
+          href="/HARSH_PARMAR_RESUME.pdf"
+          download="Harsh-Parmar-Resume.pdf"
+          className="resume-button"
+        >
+          <span>Resume</span>
+        </a>
 
           <button
             className="mobile-menu-btn"
