@@ -10,7 +10,6 @@ import {
   Code2,
   Sparkles,
   Braces,
-  ExternalLink,
   Monitor,
   Database,
   Palette,
@@ -115,12 +114,11 @@ const strengths = [
   },
 ];
 
-// Social links intentionally use text instead of brand icons.
-// Replace the example URLs with your actual profile URLs.
+// Update these links with your actual social profiles.
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/your-username",
+    url: "https://github.com/CoderHarshParmar",
   },
   {
     name: "LinkedIn",
@@ -131,6 +129,63 @@ const socialLinks = [
     url: "https://instagram.com/your-username",
   },
 ];
+
+// ==========================================
+// SOCIAL MEDIA SVG LOGOS
+// ==========================================
+
+type SocialLogoProps = {
+  name: string;
+};
+
+const SocialLogo = ({ name }: SocialLogoProps) => {
+  const commonProps = {
+    width: 22,
+    height: 22,
+    viewBox: "0 0 24 24",
+    fill: "currentColor",
+    "aria-hidden": true as const,
+  };
+
+  if (name === "GitHub") {
+    return (
+      <svg {...commonProps}>
+        <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.67-3.75-1.32-3.75-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.71 2.62 1.22 3.26.93.1-.73.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.16-2.99-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.1-1.44 3.04-1.14 3.04-1.14.61 1.54.23 2.68.11 2.96.73.78 1.16 1.77 1.16 2.99 0 4.29-2.62 5.23-5.11 5.51.4.35.75 1.03.75 2.08V22c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z" />
+      </svg>
+    );
+  }
+
+  if (name === "LinkedIn") {
+    return (
+      <svg {...commonProps}>
+        <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.9H4.97V9.35h2.96v9.55ZM6.45 8.04a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44ZM19.03 18.9h-2.96v-4.65c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.77V9.35h2.84v1.3h.04c.4-.75 1.36-1.55 2.8-1.55 3 0 3.58 1.97 3.58 4.53v5.27Z" />
+      </svg>
+    );
+  }
+
+  if (name === "Instagram") {
+    return (
+      <svg
+        {...commonProps}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      >
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1"
+          fill="currentColor"
+          stroke="none"
+        />
+      </svg>
+    );
+  }
+
+  return null;
+};
 
 // ==========================================
 // ANIMATION VARIANTS
@@ -268,15 +323,15 @@ const Home = () => {
               </Link>
             </motion.div>
 
-            <motion.a
-              href="/resume/Harsh-Resume.pdf"
-              download
+           <motion.a
+              href="/resume/HARSH_PARMAR_RESUME.pdf"
+              download="HARSH_PARMAR_RESUME.pdf"
               className="hero-resume"
               variants={itemVariants}
             >
               <Download size={16} />
               Download Resume
-            </motion.a>
+           </motion.a>
 
             <motion.div
               className="hero-socials"
@@ -296,8 +351,7 @@ const Home = () => {
                     aria-label={social.name}
                     title={social.name}
                   >
-                    {social.name}
-                    <ExternalLink size={13} />
+                    <SocialLogo name={social.name} />
                   </a>
                 ))}
               </div>
@@ -767,7 +821,9 @@ const Home = () => {
               Get In Touch <Send size={18} />
             </Link>
 
-            <div className="contact-socials">
+            {/* SOCIAL MEDIA LOGOS */}
+
+           <div className="contact-socials">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -775,9 +831,34 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
+                  title={social.name}
                 >
-                  {social.name}
-                  <ExternalLink size={14} />
+                  {social.name === "GitHub" && (
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="currentColor"
+                        d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.7 2.62 1.21 3.26.93.1-.72.39-1.21.71-1.49-2.47-.28-5.06-1.24-5.06-5.5 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.11 2.95.72.78 1.15 1.77 1.15 2.99 0 4.27-2.59 5.21-5.07 5.49.4.35.76 1.02.76 2.06V22c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"
+                      />
+                    </svg>
+                  )}
+
+                  {social.name === "LinkedIn" && (
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="currentColor"
+                        d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.5H4.97V9h2.96v9.5ZM6.45 7.7a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42ZM19 18.5h-2.95v-4.62c0-1.1-.02-2.51-1.53-2.51-1.53 0-1.77 1.2-1.77 2.43v4.7H9.8V9h2.83v1.3h.04c.4-.75 1.36-1.54 2.8-1.54 2.99 0 3.54 1.97 3.54 4.53v5.21Z"
+                      />
+                    </svg>
+                  )}
+
+                  {social.name === "Instagram" && (
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path
+                        fill="currentColor"
+                        d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+                      />
+                    </svg>
+                  )}
                 </a>
               ))}
             </div>

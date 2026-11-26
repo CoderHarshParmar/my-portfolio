@@ -81,15 +81,13 @@ const Navbar = () => {
         <div className="navbar-actions">
 
           {/* Desktop Resume Download */}
-          <a
-            href={RESUME_URL}
-            download="Harsh-Parmar-Resume.pdf"
-            className="resume-button"
-            target="_self"
-          >
-            <Download size={17} />
-            <span>Resume</span>
-          </a>
+        <a
+          href="/resume/HARSH_PARMAR_RESUME.pdf"
+          download="HARSH_PARMAR_RESUME.pdf"
+          className="resume-button"
+        >
+          <span>Resume</span>
+        </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -136,16 +134,13 @@ const Navbar = () => {
             ))}
 
             {/* Mobile Resume Download */}
-            <a
-              href={RESUME_URL}
-              download="Harsh-Parmar-Resume.pdf"
-              target="_self"
-              className="mobile-resume"
-              onClick={closeMenu}
-            >
-              Download Resume
-              <Download size={16} />
-            </a>
+           <a
+            href="/resume/HARSH_PARMAR_RESUME.pdf"
+            download="HARSH_PARMAR_RESUME.pdf"
+            className="mobile-resume"
+          >
+            Download Resume <Download size={16} />
+          </a>
 
           </motion.div>
         )}
