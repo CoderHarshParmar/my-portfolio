@@ -17,6 +17,8 @@ const navItems = [
   { name: "Contact", path: "/contact" },
 ];
 
+const RESUME_URL = "/resume/Harsh-Resume.pdf";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -31,11 +33,19 @@ const Navbar = () => {
     >
       <div className="navbar-container">
 
-        <Link to="/" className="navbar-logo" onClick={closeMenu}>
+        {/* Logo */}
+        <Link
+          to="/"
+          className="navbar-logo"
+          onClick={closeMenu}
+        >
           <span className="logo-symbol">H.</span>
-          <span>HARSH<span className="logo-dot">.</span></span>
+          <span>
+            HARSH<span className="logo-dot">.</span>
+          </span>
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="desktop-nav">
           {navItems.map((item) => (
             <NavLink
@@ -49,6 +59,7 @@ const Navbar = () => {
               {({ isActive }) => (
                 <>
                   {item.name}
+
                   {isActive && (
                     <motion.span
                       className="nav-indicator"
@@ -66,15 +77,21 @@ const Navbar = () => {
           ))}
         </nav>
 
+        {/* Navbar Actions */}
         <div className="navbar-actions">
-        <a
-          href="/HARSH_PARMAR_RESUME.pdf"
-          download="Harsh-Parmar-Resume.pdf"
-          className="resume-button"
-        >
-          <span>Resume</span>
-        </a>
 
+          {/* Desktop Resume Download */}
+          <a
+            href={RESUME_URL}
+            download="Harsh-Parmar-Resume.pdf"
+            className="resume-button"
+            target="_self"
+          >
+            <Download size={17} />
+            <span>Resume</span>
+          </a>
+
+          {/* Mobile Menu Button */}
           <button
             className="mobile-menu-btn"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -83,9 +100,11 @@ const Navbar = () => {
           >
             {menuOpen ? <X /> : <Menu />}
           </button>
+
         </div>
       </div>
 
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -116,13 +135,18 @@ const Navbar = () => {
               </motion.div>
             ))}
 
+            {/* Mobile Resume Download */}
             <a
-              href="/resume/Harsh-Resume.pdf"
-              download
+              href={RESUME_URL}
+              download="Harsh-Parmar-Resume.pdf"
+              target="_self"
               className="mobile-resume"
+              onClick={closeMenu}
             >
-              Download Resume <Download size={16} />
+              Download Resume
+              <Download size={16} />
             </a>
+
           </motion.div>
         )}
       </AnimatePresence>
